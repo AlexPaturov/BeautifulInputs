@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputFields", "InputFields\InputFields.csproj", "{1EABCBEA-5424-40D8-83C9-FC858561C5F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoubleInput", "DoubleInput\DoubleInput.csproj", "{A2B99C73-DD8F-4B20-97CA-2690B62F97CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1EABCBEA-5424-40D8-83C9-FC858561C5F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EABCBEA-5424-40D8-83C9-FC858561C5F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EABCBEA-5424-40D8-83C9-FC858561C5F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2B99C73-DD8F-4B20-97CA-2690B62F97CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2B99C73-DD8F-4B20-97CA-2690B62F97CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2B99C73-DD8F-4B20-97CA-2690B62F97CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2B99C73-DD8F-4B20-97CA-2690B62F97CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

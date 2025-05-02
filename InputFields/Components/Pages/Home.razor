@@ -139,12 +139,12 @@
 
                         <div class="ios-control-container">
                             <div class="ios-control-group">
-                                <label class="ios-control-label">Время взвешивания 4</label>
+                                <label class="ios-control-label">Время взвешивания two</label>
 
                                 <div class="ios-switch-container">
                                     <label class="ios-switch">
                                         <input type="checkbox"
-                                               @bind-value="IsVrInputDisabled"
+                                               @bind-value="IsVrInputDisabledTwo"
                                                class="ios-switch-input" />
                                         <span class="ios-switch-slider"></span>
                                     </label>
@@ -153,8 +153,8 @@
                             <div class="ios-time-input-container">
                                 <input type="time"
                                        class="ios-time-input"
-                                       @bind="@InputTime"
-                                       disabled="@(!IsVrInputDisabled)"
+                                       @bind="@InputTimeTwo"
+                                       disabled="@(!IsVrInputDisabledTwo)"
                                        step="1"
                                        @bind:format="HH:mm:ss" />
                             </div>
@@ -175,6 +175,9 @@
     // чекбокс отключения поля ввода времени
     private bool IsVrInputDisabled;
     private DateTime InputTime;
+
+    private bool IsVrInputDisabledTwo;
+    private DateTime InputTimeTwo;
 
     private DateTime _dateBegin = DateTime.UtcNow;
     private DateTime _dateEnd = DateTime.UtcNow;

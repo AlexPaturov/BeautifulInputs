@@ -1,0 +1,52 @@
+﻿@page "/"
+
+<div class="row justify-content-center">
+    <div class=" col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 col-xxl-11 form-layout">
+
+        <div class="col-auto">
+            <div class="col mb-1 ios-control-container">
+                <div class="ios-control-group">
+                    <label class="ios-control-label">Один потребитель/поставщик</label>
+                    <div class="ios-switch-container" role="switch" aria-checked="@IsPostavPotrebChecked" aria-label="Один потребитель/поставщик" @onclick="TogglePostavPotreb">
+                        <label class="ios-switch">
+                            <input type="checkbox"
+                                   @bind-value="IsPostavPotrebChecked"
+                                   class="ios-switch-input" />
+                            <span class="ios-switch-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="ios-input-container">
+                    <label class="ios-input-label" for="inlineFormInputGroupCex">ЦЕХ</label>
+                    <input type="text"
+                           class="ios-input"
+                           id="inlineFormInputGroupCex"
+                           Disabled="@(!IsPostavPotrebChecked)"
+                           @bind="@InputCex" />
+                </div>
+
+                <div class="ios-input-container">
+                    <label class="ios-input-label" for="inlineFormInputGroupPostav">Поставщик</label>
+                    <input type="text"
+                           class="ios-input"
+                           id="inlineFormInputGroupPostav"
+                           Disabled="@(!IsPostavPotrebChecked)"
+                           @bind="@InputPostav" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@code {
+    private bool IsPostavPotrebChecked { get; set; } = false;
+    private string InputCex { get; set; } = "";
+    private string InputPostav { get; set; } = "";
+
+    private void TogglePostavPotreb()
+    {
+        IsPostavPotrebChecked = !IsPostavPotrebChecked;
+    }
+}
