@@ -1,0 +1,185 @@
+﻿@page "/"
+@using System.Globalization
+
+<div class="row justify-content-center">
+    <div class=" col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 col-xxl-11 form-layout">
+
+        @* Блок полей для корректировки - начало *@
+        <div class="row mb-2">
+            <div class="row d-flex justify-content-center korr-inputs-area">
+
+                @* -------------------- first block begin ---------------------------------------------- *@
+                <div class="col-12 col-sm-10 col-md-6 col-lg-5 col-xl-5 col-xxl-3 mb-2">
+
+                    @* Дата начала *@
+                    <div class="col-auto mb-2">
+                        <div class="ios-input-container-dtvr">
+                            <div class="ios-input-group-dtvr">
+                                <label class="ios-input-label-dtvr">Дата начала</label>
+                                <div class="ios-input-wrapper">
+                                    <input type="date"
+                                           id="dtBegin"
+                                           class="ios-input"
+                                           @bind="_dateBegin"
+                                           @bind:event="oninput" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    @* Дата окончания *@
+                    <div class="col-auto mb-2">
+                        <div class="ios-input-container-dtvr">
+                            <div class="ios-input-group-dtvr">
+                                <label class="ios-input-label-dtvr">Дата окончания</label>
+                                <div class="ios-input-wrapper">
+                                    <input type="date"
+                                           id="dtEnd"
+                                           class="ios-input"
+                                           @bind="_dateEnd"
+                                           @bind:event="oninput" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    @* Время взвешивания *@
+                    <div class="col-auto mb-2">
+                        <div class="ios-input-container-dtvr">
+                            <div class="ios-input-group-dtvr">
+                                <label class="ios-input-label-dtvr">Время взвешивания</label>
+                                <div class="ios-input-wrapper">
+                                    <InputDate Type="InputDateType.Time"
+                                               @bind-Value:format="hh:mm:ss"
+                                               @bind-Value="@inVr"
+                                               id="VR"
+                                               step="1"
+                                               class="ios-input" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    @* Номер вагона *@
+                    <div class="col-auto mb-2">
+                        <div class="ios-input-container-dtvr">
+                            <div class="ios-input-group-dtvr">
+                                <label class="ios-input-label-dtvr" for="NVAG">Номер вагона</label>
+                                <div class="ios-input-wrapper">
+                                    <InputText @bind-Value="@inNvag"
+                                               id="NVAG"
+                                               class="ios-input"
+                                               placeholder="Введите номер" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    @* Груз *@
+                    <div class="col-auto mb-2">
+                        <div class="ios-input-container-dtvr">
+                            <div class="ios-input-group-dtvr">
+                                <label class="ios-input-label-dtvr" for="gruz">Груз</label>
+                                <div class="ios-input-wrapper">
+                                    <InputText @bind-Value="@inGruz"
+                                               id="gruz"
+                                               class="ios-input"
+                                               placeholder="Введите груз" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                @* ----------------- first block end -------------------------- *@
+
+                <div class="col-12 col-sm-10 col-md-6 col-lg-5 col-xl-5 col-xxl-3 mb-2"> 
+
+                   <div class="form-control">
+                       <input  class="form-control"/>
+                   </div>
+
+                </div>
+
+                <div class="col-12 col-sm-10 col-md-6 col-lg-5 col-xl-5 col-xxl-3 mb-2">
+
+                    <div class="col-auto">
+
+                        <div class="ios-control-container">
+                            <div class="ios-control-group">
+                                <label class="ios-control-label">Время взвешивания</label>
+
+                                <div class="ios-switch-container">
+                                    <label class="ios-switch">
+                                        <input type="checkbox"
+                                               @bind-value="IsVrInputDisabled"
+                                               class="ios-switch-input" />
+                                        <span class="ios-switch-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="ios-time-input-container">
+                                <input type="time"
+                                       class="ios-time-input"
+                                       @bind="@InputTime"
+                                       disabled="@(!IsVrInputDisabled)"
+                                       step="1"
+                                       @bind:format="HH:mm:ss" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-sm-10 col-md-6 col-lg-5 col-xl-5 col-xxl-3 mb-2">
+
+                    @* -- there -- *@
+                    <div class="col-auto">
+
+                        <div class="ios-control-container">
+                            <div class="ios-control-group">
+                                <label class="ios-control-label">Время взвешивания 4</label>
+
+                                <div class="ios-switch-container">
+                                    <label class="ios-switch">
+                                        <input type="checkbox"
+                                               @bind-value="IsVrInputDisabled"
+                                               class="ios-switch-input" />
+                                        <span class="ios-switch-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="ios-time-input-container">
+                                <input type="time"
+                                       class="ios-time-input"
+                                       @bind="@InputTime"
+                                       disabled="@(!IsVrInputDisabled)"
+                                       step="1"
+                                       @bind:format="HH:mm:ss" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        
+    </div>
+</div>
+@* Поля ввода для фильтров - окончание *@
+
+@code {
+    // чекбокс отключения поля ввода времени
+    private bool IsVrInputDisabled;
+    private DateTime InputTime;
+
+    private DateTime _dateBegin = DateTime.UtcNow;
+    private DateTime _dateEnd = DateTime.UtcNow;
+    private DateTime inDt = DateTime.ParseExact("05.07.2024", "dd.MM.yyyy", CultureInfo.InvariantCulture);
+    private DateTime inVr = DateTime.ParseExact("10:13:33", "HH:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+    private string inNvag = string.Empty;
+    private string inGruz = string.Empty;
+}
