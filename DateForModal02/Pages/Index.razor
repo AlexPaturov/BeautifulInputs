@@ -1,0 +1,48 @@
+﻿@page "/"  
+
+<!-- Блок для фильтрации по дате. Номер вагона изменять нельзя. Начало. -->  
+<div class="row d-flex justify-content-around align-items-center mb-2" style="max-width: 95vw; margin-left:5px;">
+
+    <!-- Поле "Дата начала" -->
+    <div class="col-auto ios-date-container" style="width: 220px;">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text ios-date-label">Дата начала</span>
+            </div>
+            <InputDate Type="InputDateType.Date" @bind-Value="@_dtBeginTaraModal"
+                       class="form-control ios-date-input" style="width: 100px;" />
+        </div>
+    </div>
+
+    <!-- Поле "Дата окончания" -->
+    <div class="col-auto ios-date-container" style="width: 220px;">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text ios-date-label">Дата окончания</span>
+            </div>
+            <InputDate Type="InputDateType.Date" @bind-Value="@_dtEndTara"
+                       class="form-control ios-date-input" style="width: 100px;" />
+        </div>
+    </div>
+
+    <!-- Кнопка "Показать" -->
+    <div class="col-auto">
+        <button type="button" class="btn ios-button-sm ios-button-select">
+            Показать
+        </button>
+    </div>
+
+
+</div>  
+
+<!-- Блок для фильтрации по дате. Номер вагона изменять нельзя. Окончание. -->  
+@code{  
+    private DateTime _dtBeginTaraModal;  
+    private DateTime _dtEndTara;  
+    private bool _isGettingTara = false;  
+
+    private void GetTaraClick()  
+    {  
+        // Logic for handling the "Показать" button click  
+    }  
+}

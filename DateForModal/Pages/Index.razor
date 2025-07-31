@@ -1,0 +1,55 @@
+﻿@page "/"  
+
+<!-- Блок для фильтрации по дате. Номер вагона изменять нельзя. Начало. -->  
+<div class="row d-flex justify-content-around align-items-center mb-2" style="max-width: 95vw; margin-left:5px;">  
+
+    <!-- 1. Поле "Дата начала" -->  
+    <div class="col-auto">  
+        <!-- Заменяем "input-group" на "ios-input-group" -->  
+        <div class="ios-input-group">  
+            <!-- Убираем лишние классы форматирования, наш CSS справится сам -->  
+            <span class="input-group-text">Дата начала</span>  
+
+            <!-- У InputDate оставляем только form-control -->  
+            <InputDate Type="InputDateType.Date" @bind-Value="@_dtBeginTaraModal" class="form-control" />  
+        </div>  
+    </div>  
+
+    <!-- 2. Поле "Дата окончания" -->  
+    <div class="col-auto">  
+        <!-- Заменяем "input-group" на "ios-input-group" -->  
+        <div class="ios-input-group">  
+            <span class="input-group-text">Дата окончания</span>  
+            <InputDate Type="InputDateType.Date" @bind-Value="@_dtEndTara" class="form-control" />  
+        </div>  
+    </div>  
+
+    <!-- 3. Кнопка "Показать" (оставляем без изменений) -->  
+    <div class="col-auto">  
+        <button class="btn ios-button-sm ios-button-select" @onclick="GetTaraClick" disabled="@_isGettingTara">  
+            @if (_isGettingTara)  
+            {  
+                <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>  
+                <span>Получение...</span>  
+            }  
+            else  
+            {  
+                <span>Показать</span>  
+            }  
+        </button>  
+    </div>  
+
+</div>  
+<!-- Блок для фильтрации по дате. Номер вагона изменять нельзя. Окончание. -->  
+
+@code{  
+    // Declare the missing fields to fix CS0103 errors  
+    private DateTime _dtBeginTaraModal = DateTime.Now;  
+    private DateTime _dtEndTara = DateTime.Now;  
+    private bool _isGettingTara = false;  
+
+    private void GetTaraClick()  
+    {  
+        // Logic for handling the button click  
+    }  
+}

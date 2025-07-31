@@ -1,0 +1,36 @@
+﻿@page "/"  
+
+<!-- Блок для фильтрации по дате с полной рамкой при наведении -->  
+<div class="row d-flex justify-content-around align-items-center mb-2" style="max-width: 95vw; margin-left:5px;">  
+
+    <!-- Поле "Дата начала" -->  
+    <div class="col-auto p-0">  
+        <div class="input-group ios-date-group">  
+            <span class="input-group-text ios-date-label">Дата начала</span>  
+            <InputDate Type="InputDateType.Date" @bind-Value="@_dtBeginTaraModal"  
+                       class="form-control ios-date-input" />  
+        </div>  
+    </div>  
+
+    <!-- Поле "Дата окончания" -->  
+    <div class="col-auto p-0">  
+        <div class="input-group ios-date-group">  
+            <span class="input-group-text ios-date-label">Дата окончания</span>  
+            <InputDate Type="InputDateType.Date" @bind-Value="@_dtEndTara"  
+                       class="form-control ios-date-input" />  
+        </div>  
+    </div>  
+
+    <!-- Кнопка "Показать" -->  
+    <div class="col-auto">  
+        <button type="button" class="btn ios-button-sm ios-button-select">  
+            Показать  
+        </button>  
+    </div>  
+
+</div>  
+
+@code{  
+    private DateTime _dtBeginTaraModal;  
+    private DateTime _dtEndTara;  
+}
